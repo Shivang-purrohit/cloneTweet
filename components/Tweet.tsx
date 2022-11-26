@@ -62,7 +62,10 @@ const comment: CommentBody = {
 
   return (
     
-    <div className='flex flex-col space-x-3 border-y border-gray-100 p-5'>
+    <div
+    key={tweet._id}
+    className='flex flex-col space-x-3 border-y border-gray-100 p-5'>
+
         <div className='flex space-x-3'>
         <img className='h-10 w-10  rounded-full object-cover' src={tweet.profileImg} alt='' />
 <div>
@@ -89,7 +92,7 @@ const comment: CommentBody = {
         </div>
 
 <div className='mt-5 flex justify-between' >
-    <div onClick={() => session && setCommentBox (!commentBox)} className='flex cursor-pointer items-center space-x-3 text-gray-400' > <ChatAlt2Icon  className='h-5 w-5' /> <p>{comments.length}</p> </div>
+    <div onClick={(e) => session && setCommentBox(!commentBox)} className='flex cursor-pointer items-center space-x-3 text-gray-400' > <ChatAlt2Icon  className='h-5 w-5' /> <p>{comments.length}</p> </div>
     <div  className='flex cursor-pointer items-center space-x-3 text-gray-400' > <SwitchHorizontalIcon className='h-5 w-5' />  </div>
     <div  className='flex cursor-pointer items-center space-x-3 text-gray-400' > <HeartIcon className='h-5 w-5' />   </div>
     <div  className='flex cursor-pointer items-center space-x-3 text-gray-400' > <UploadIcon className='h-5 w-5' />    </div>
